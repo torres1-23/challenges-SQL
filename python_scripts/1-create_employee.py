@@ -1,20 +1,13 @@
 #!/usr/bin/python3
+""" Creates an employee record in the database boli_assurance of SQL"""
 import mysql.connector
 import sys
+from database_connect import mydb, mycursor
 
-
-mydb = mysql.connector.connect(
-    host="127.0.0.1",
-    user="root",
-    password="root",
-    database="boli_assurance"
-)
-mycursor = mydb.cursor()
 sql = ("INSERT INTO employee (id_employee, first_name, last_name, department) "
        "VALUES (%s, %s, %s, %s)")
 args = sys.argv
-val = (int(args[1]), args[2], args[3], args[4])
-print(val)
+val = (args[1], args[2], args[3], args[4])
 mycursor.execute(sql, val)
 mydb.commit()
 print(mycursor.rowcount, "record inserted.")
