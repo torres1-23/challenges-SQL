@@ -7,7 +7,7 @@ from database_connect import mydb, mycursor
 sql = ("INSERT INTO employee (id_employee, first_name, last_name, department) "
        "VALUES (%s, %s, %s, %s)")
 args = sys.argv
-val = (args[1], args[2], args[3], args[4])
+val = (int(args[1]), args[2], args[3], args[4])
 mycursor.execute(sql, val)
 mydb.commit()
 print(mycursor.rowcount, "record inserted.")
