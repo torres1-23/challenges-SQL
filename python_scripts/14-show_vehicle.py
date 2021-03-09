@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Deletes a vehicle record in the database boli_assurance of SQL"""
+"""Show all vehicles record in the database boli_assurance of SQL"""
 import mysql.connector
 import sys
 from database_connect import mydb, mycursor
